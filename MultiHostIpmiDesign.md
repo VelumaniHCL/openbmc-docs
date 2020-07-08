@@ -20,9 +20,8 @@ As detailed below the hosts are connected in the ipmb interface, all host
 related communication is based on ipmb. The openbmc uses ipmbbridged to manage 
 ipmb busses and the ipmb messages are routed to ipmid.
 
-Issue 1: ipmbridged does not support more than 2 channels
-Issue 2: ipmid does not have the information on which ipmb channel the request 
-has come from. The ipmid handlers should have the host details to fetch the 
+Issue 1: ipmbridged does not send the channel number (HostId)
+Issue 2: ipmid does not have the information on which ipmb channel the request has come from. The ipmid handlers should have the host details to fetch the 
 host specific responses.
 
 ## Background and References
@@ -103,6 +102,6 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNDkzNDEwMSwyMDY1MjE0NDM4LC0xOT
+eyJoaXN0b3J5IjpbLTMyMTI4MTU1NywyMDY1MjE0NDM4LC0xOT
 g3NDU4NjkzXX0=
 -->
