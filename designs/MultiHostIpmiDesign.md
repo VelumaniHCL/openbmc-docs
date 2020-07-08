@@ -112,7 +112,7 @@ look like below
 
 Reading the json file ipmbbridged to support host channels optionally.
 
-**Change 2: Sending Host detail as addional parameter**
+**Change 2: Sending Host detail as additional parameter**
 
 While routing the ipmb requests coming from the host channel, the ipmbbridged 
 adds the ipmb bus details configured in the json file key "type". 
@@ -143,5 +143,6 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODc0NTg2OTMsLTYwOTc4MTQzMV19
+eyJoaXN0b3J5IjpbMjA2NTIxNDQzOCwtMTk4NzQ1ODY5MywtNj
+A5NzgxNDMxXX0=
 -->
