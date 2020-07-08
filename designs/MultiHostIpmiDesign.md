@@ -5,9 +5,9 @@ Author:
   Kumar T(kumar_t), [thangavel.k@hcl.com](mailto:thangavel.k@hcl.com)
 
 Primary assignee:
- 
+
 Other contributors:
- 
+
 Created:
  June 26, 2020
 
@@ -21,26 +21,26 @@ Issue 2: ipmid does not have the information on which ipmb channel the request h
 
 ## Background and References
 IPMI and IPMB System architecture:
-       
+
        +-----------+       +------------+      +--------+
        |           |       |            | ipmb1|        |
        |           |       |            |------| Host-1 |
        |           |       |            |      |        |
        |           |       |            |      +--------+
        |           |       |            |
-       |           |       |            |                   
-       |           | dbus  |            |      +--------+   
-       | ipmid     |-------| Ipmbbridged| ipmb2|        |   
-       |           |       |            |------| Host-2 |   
-       |           |       |            |      |        |   
-       |           |       |            |      +--------+   
        |           |       |            |
-       |           |       |            |                   
-       |           |       |            |      +--------+   
-       |           |       |            | ipmb |        |   
-       |           |       |            |------| Host-N |   
-       |           |       |            |      |        |   
-       +-----------+       +------------+      +--------+   
+       |           | dbus  |            |      +--------+
+       | ipmid     |-------| Ipmbbridged| ipmb2|        |
+       |           |       |            |------| Host-2 |
+       |           |       |            |      |        |
+       |           |       |            |      +--------+
+       |           |       |            |
+       |           |       |            |
+       |           |       |            |      +--------+
+       |           |       |            | ipmb |        |
+       |           |       |            |------| Host-N |
+       |           |       |            |      |        |
+       +-----------+       +------------+      +--------+
 Hosts are connected with ipmb interface, the hosts can be 1 to N. The ipmb request coming from the hosts are routed to ipmid by the ipmbbridged.
 The ipmd requests are routed from ipmid or any service by d-bus interface and the ipmbbridged routes to ipmb interface.
 ## Requirements
@@ -61,11 +61,11 @@ While routing the ipmb requests coming from the host channel, We will be adding 
 
 The json file looks like below
 
-{ "type": "ipmb",  
-"slave-path": "/dev/ipmb-1",  
-"bmc-addr": 32,  
-"remote-addr": 64,  
-"host": 1  
+{ "type": "ipmb",
+"slave-path": "/dev/ipmb-1",
+"bmc-addr": 32,
+"remote-addr": 64,
+"host": 1
 },
 
 Issue2: Changes in ipmid:
@@ -83,6 +83,3 @@ There may be an impact in ipmid command handler functions as the context will be
 
 ## Testing
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjcxODQ3MThdfQ==
--->
