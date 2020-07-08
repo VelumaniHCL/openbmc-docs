@@ -16,8 +16,7 @@ The current version of openbmc does not support multi-host implementation in ipm
 commands handling. We have a multi-host system and proposing the design to 
 support multi-host.
 
-As detailed below the hosts are connected in the ipmb interface, all host 
-related communication is based on ipmb. The openbmc uses ipmbbridged to manage 
+As detailed below the hosts are connected in the ipmb interface, all host related communication is based on ipmb. The openbmc uses ipmbbridged to manage 
 ipmb busses and the ipmb messages are routed to ipmid.
 
 Issue 1: ipmbridged does not send the channel number (HostId)
@@ -61,14 +60,13 @@ To address issue1 and issue2, we propose the following design changes in
 ipmbbridged and ipmid.
 
 Changes in ipmbbridged:
------
+
 ipmbbridged to send the channel details from where the request is received
 
 **Change : Sending Host detail as additional parameter**
 
-While routing the ipmb requests coming from the host channel,
-We will be adding new entry in the json config file for the host ID  "host": 1"
-ipmb will send "host": 1" as optional parameter(option) in the d-bus interface to ipmid.
+While routing the ipmb requests coming from the host channel, We will be adding new entry in the json config file for the host ID  "host": 1" ipmb will send "host": 1" as optional parameter(option) in the d-bus interface to ipmid.
+
 The json file looks like below
 
 { "type": "ipmb",  
@@ -102,6 +100,6 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMTI4MTU1NywyMDY1MjE0NDM4LC0xOT
+eyJoaXN0b3J5IjpbMTI3ODgxNTM0OCwyMDY1MjE0NDM4LC0xOT
 g3NDU4NjkzLC02MDk3ODE0MzFdfQ==
 -->
