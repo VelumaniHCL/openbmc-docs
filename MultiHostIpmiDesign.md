@@ -69,7 +69,15 @@ ipmbbridged to send the channel details from where the request is received
 
 While routing the ipmb requests coming from the host channel,
 We will be adding new entry in the json config file for the host ID  "host": 1"
-ipmb will send "host": 1" as optional parameter in the d-bus interface to ipmid.
+ipmb will send "host": 1" as optional parameter(option) in the d-bus interface to ipmid.
+The json file looks like below
+
+{ "type": "ipmb",  
+"slave-path": "/dev/ipmb-1",  
+"bmc-addr": 32,  
+"remote-addr": 64,  
+"host": 1  
+},
 
 Changes in ipmid:
 --------
@@ -95,6 +103,6 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2MDg1NzQ3NiwyMDY1MjE0NDM4LC0xOT
+eyJoaXN0b3J5IjpbLTgzNDkzNDEwMSwyMDY1MjE0NDM4LC0xOT
 g3NDU4NjkzXX0=
 -->
