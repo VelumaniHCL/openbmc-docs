@@ -51,7 +51,7 @@ The current version of openbmc does not support multi-host implementation in ipm
 To address issue1 and issue2, we propose the following design changes in 
 ipmbbridged and ipmid.
 
-Changes in ipmbbridged:
+Issue 1:Changes in ipmbbridged:
 -
 ipmbbridged to send the channel details from where the request is received
 
@@ -68,7 +68,7 @@ The json file looks like below
 "host": 1  
 },
 
-Changes in ipmid:
+Issue2: Changes in ipmid:
 -
 Receive the optional parameter sent by the ipmbbriged as host details, while receiving the parameter in the executionEntry method call the same will be passed to the command handlers in both common and oem handlers.The command handlers can make use of the host information to fetch host specific data.
 
@@ -84,6 +84,6 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMyNzcwMDk3LDIwNjUyMTQ0MzgsLTE5OD
-c0NTg2OTNdfQ==
+eyJoaXN0b3J5IjpbLTgyNTU0OTc2MCwyMDY1MjE0NDM4LC0xOT
+g3NDU4NjkzXX0=
 -->
