@@ -52,12 +52,9 @@ request coming from the hosts are routed to ipmid by the ipmbbridged.
 The ipmd requests are routed from ipmid or any service by d-bus interface and
 the ipmbbridged routes to ipmb interface.
 ## Requirements
-(2-5 paragraphs) What are the constraints for the problem you are trying to
-solve? Who are the users of this solution? What is required to be produced?
-What is the scope of this effort? Your job here is to quickly educate others
-about the details you know about the problem space, so they can help review
-your implementation. Roughly estimate relevant details. How big is the data?
-What are the transaction rates? Bandwidth?
+The current version of openbmc does not support multi-host implementation in ipmi 
+commands handling. We have a multi-host system and proposing the design to 
+support multi-host.
 
 ## Proposed Design
 
@@ -146,5 +143,5 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwOTc4MTQzMV19
+eyJoaXN0b3J5IjpbLTE5ODc0NTg2OTMsLTYwOTc4MTQzMV19
 -->
