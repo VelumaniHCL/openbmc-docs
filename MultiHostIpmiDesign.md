@@ -63,56 +63,9 @@ ipmbbridged and ipmid.
 
 Changes in ipmbbridged:
 -----
-The current ipmbbridged supports only 2 channels and this needs to be 
-enhanced to more channels.
 ipmbbridged to send the channel details from where the request is received
 
-**Change1 : support more than 2 channels**
-
-To support more than 2 channels, we propose to add additional channels named 
-"host1", "host2" ..."hostn"
-
-This can be decided by the config file "ipmb-channels.json", The change will 
-look like below
-
-{
-  "channels": [
-    {
-      "type": "me",
-      "slave-path": "/dev/ipmb-1",
-      "bmc-addr": 32,
-      "remote-addr": 44
-    },
-    {
-      "type": "ipmb",
-      "slave-path": "/dev/ipmb-2",
-      "bmc-addr": 32,
-      "remote-addr": 96
-    }
-	{
-      "type": "host1",
-      "slave-path": "/dev/ipmb-3",
-      "bmc-addr": 32,
-      "remote-addr": 64
-    }
-	{
-      "type": "host2",
-      "slave-path": "/dev/ipmb-4",
-      "bmc-addr": 32,
-      "remote-addr": 64
-    }
-	{
-      "type": "host3",
-      "slave-path": "/dev/ipmb-4",
-      "bmc-addr": 32,
-      "remote-addr": 64
-    }
-  ]
-}
-
-Reading the json file ipmbbridged to support host channels optionally.
-
-**Change 2: Sending Host detail as additional parameter**
+**Change : Sending Host detail as additional parameter**
 
 While routing the ipmb requests coming from the host channel, the ipmbbridged 
 adds the ipmb bus details configured in the json file key "type". 
@@ -143,5 +96,6 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NTIxNDQzOCwtMTk4NzQ1ODY5M119
+eyJoaXN0b3J5IjpbNTY4MDY4MjIwLDIwNjUyMTQ0MzgsLTE5OD
+c0NTg2OTNdfQ==
 -->
