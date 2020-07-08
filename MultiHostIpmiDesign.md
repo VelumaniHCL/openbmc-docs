@@ -67,7 +67,9 @@ ipmbbridged to send the channel details from where the request is received
 
 **Change : Sending Host detail as additional parameter**
 
-While routing the ipmb requests coming from the host channel, the ipmbbridged 
+While routing the ipmb requests coming from the host channel,
+We will be adding new entry in the 
+ the ipmbbridged 
 adds the ipmb bus details configured in the json file key "type". 
 In the above example the ipmb request coming from "/dev/ipmb-4" the ipmb will 
 send "host2" as optional parameter in the d-bus interface to ipmid.
@@ -96,6 +98,6 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTY4MDY4MjIwLDIwNjUyMTQ0MzgsLTE5OD
-c0NTg2OTNdfQ==
+eyJoaXN0b3J5IjpbLTI5NzQ3MDMxNiwyMDY1MjE0NDM4LC0xOT
+g3NDU4NjkzXX0=
 -->
