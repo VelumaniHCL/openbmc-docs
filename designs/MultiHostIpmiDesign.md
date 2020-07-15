@@ -41,6 +41,8 @@ IPMI and IPMB System architecture:
        |           |       |            |------| Host-N |
        |           |       |            |      |        |
        +-----------+       +------------+      +--------+
+
+
 Hosts are connected with ipmb interface, the hosts can be 1 to N. The ipmb request coming from the hosts are routed to ipmid by the ipmbbridged.
 The ipmd requests are routed from ipmid or any service by d-bus interface and the ipmbbridged routes to ipmb interface.
 ## Requirements
@@ -84,5 +86,5 @@ There may be an impact in ipmid command handler functions as the context will be
 ## Testing
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgyODQ3MDkyXX0=
+eyJoaXN0b3J5IjpbMTgxNzMwNjY0OCw2ODI4NDcwOTJdfQ==
 -->
