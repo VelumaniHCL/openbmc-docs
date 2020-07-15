@@ -119,40 +119,41 @@ at 26 2 1 2 3 4 5 6 4 5 6 183 97 154 104 121 213 151 178 156 146 192 193 173 132
  - Provide a command for user to read current postcode.
  - POST code history.
  - Provide a command for user to see the all postcode for any given server.
- +--------------------------+                             +-------------+
- | +------------------------+                             |             |
- | phosphor-host-postd      |                             |             |
- | |               +--------+  /dev/apeed-lpc-snoop       +--------+    |
- | |               |        |<----------------------------|LPC     |    |
- | |               |LPC     |                             |        |    |
- | |               |        |                             |        |    |
- | |xyz.Openbmc_project.----+                             +--------+    |
- | |State.Boot.Raw.Value    |                             |             |
- | +-------------/----------+                             |             |
- |               |          |                             |             |
- |               |          |                             |             |
- |      BMC      |          |                             +-------------+
- |               |          |                                            
- |               |          |                                            
- |  +------------\----------+   xyz.openbmc_project.      +-------------+
- |  |         +-------------+    State.Boot.Postcode      |             |
- |  |         |             |<--------------------------->|ipmi/https   |
- |  |         |  postcode   |                             |             |
- |  |         |  history    |                             |             |
- |  |         +-------------+                             |             |
- |  |phosphor-post-code-manager                           |             |
- |  +-----------------------+                             +-------------+
- |                          |                                            
- |                          |                                            
- |                          |                                            
- |                          |                             +-------------+
- |  +-----------------------+                             | seven segment
- |  |                       |                             |   display   |
- |  |        SGPIO          |----8GPIOs------------------>|             |
- |  |                       |                             |             |
- |  |                       |                             |             |
- |  +-----------------------+                             +-------------+
- +--------------------------+                                            
++--------------------------+                             +-------------+
+| +------------------------+                             |             |
+| phosphor+host+postd      |                             |             |
+| +               +--------+  /de^/apeed+lpc+snoop       +--------+    |
+| |               |        +<----------------------------+LPC     |    |
+| |               |LPC     |                             |        |    |
+| |               +        |                             |        |    |
+| |xyz.Openbmc_project.+---+                             +--------+    |
+| |State.Boot.Raw.Value    |                             |             |
+| +------------+/+---------+                             |             |
+|               +          |                             |             |
+|               |          |                             |             |
+|      BMC      |          |                             +-------------+
+|               |          |
+|               +          |
+|  +-----------+\+---------+   xyz.openbmc_project.      +-------------+
+|  |         +-------------+    State.Boot.Postcode      |             |
+|  |         |             +<--------------------------->+ipmi/https   |
+|  |         |  postcode   |                             |             |
+|  |         |  history    |                             |             |
+|  |         +-------------+                             |             |
+|  |phosphor+post|code|manager                           |             |
+|  +-----------------------+                             +-------------+
+|                          |
+|                          |
+|                          |
+|                          |                             +-------------+
+|  +-----------------------+                             | seven segment
+|  |                       |                             |   display   +
+|  |        SGPIO          +---+8GPIOs+----------------->+             |
+|  |                       |                             |             |
+|  |                       |                             |             |
+|  +-----------------------+                             +-------------+
++--------------------------+
+                                        
                                                                          
 ##  fb-ipmi-oem
 
@@ -179,5 +180,6 @@ Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](h
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4Nzc0NTA4MSw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMzM5OTY0MzYyLC05ODc3NDUwODEsNzMwOT
+k4MTE2XX0=
 -->
